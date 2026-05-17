@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // brute force approach
 #include <iostream>
 #include <vector>
@@ -31,4 +32,39 @@ int main()
   vector<int> ans = pairSum(nums, target);
   cout << ans[0] << "," << ans[1] << endl;
   return 0;
+=======
+// brute force approach
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// function for finding pair
+vector<int> pairSum(vector<int> nums, int target)
+{
+  int n = nums.size();
+  vector<int> ans;
+  for (int i = 0; i < n; i++)
+  {
+    for (int j = i + 1; j < n; j++)
+    {
+      if (nums[i] + nums[j] == target)
+      {
+        ans.push_back(i);
+        ans.push_back(j);
+
+        return ans;
+      }
+    }
+  }
+  return ans; // if pair not found
+}
+int main()
+{
+  vector<int> nums = {2, 7, 11, 15};
+  int target = 13;
+
+  vector<int> ans = pairSum(nums, target);
+  cout << ans[0] << "," << ans[1] << endl;
+  return 0;
+>>>>>>> d03cd9b0cf447c190690719d2d136bc996dafc0f
 }
